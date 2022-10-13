@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import ReactDOM from 'react-dom/client';
+import '../forms/Contactform.css';
+//import '../../backend/connectionDatabase';
+//import connection from '../../backend/connectionDatabase';
+const axios = require('axios').default;
 
 function Contactform() {
   const [inputs, setInputs] = useState({});
@@ -10,27 +14,45 @@ function Contactform() {
     setInputs(values => ({...values, [name]: value}))
   }
 
+  //gather input and send to DB
   const handleSubmit = (event) => {
     event.preventDefault();
     alert(JSON.stringify(inputs));
     alert('Thank you for your inquiry')
+
+    const data = {
+      firstName: inputs.firstName,
+      lastname: inputs.lastName,
+      email: inputs.email,
+      message: inputs.message
+    }
+
+    axios.post ('../../backend/connectionDatabase', data)
+      .then((res) => {
+        console.log(res.data)
+      }).catch ((error) => {
+        console.log(error)
+      })
+
   }
+  
 
   return (
-    <form onSubmit={handleSubmit}>
+    //handle submit form by adding method
+    <form onSubmit={handleSubmit}> 
       <label>Enter your first name:
       <input 
         type="text" 
         name="firstName" 
-        value={inputs.firstName || ""} 
-        onChange={handleChange}
+        value={inputs.firstName } 
+        onChange={handleChange}  //input to handle change
       />
       </label>
       <label>Enter your last name:
       <input 
         type="text" 
         name="lastName" 
-        value={inputs.lastName || ""} 
+        value={inputs.lastName } 
         onChange={handleChange}
       />
       </label>
@@ -38,7 +60,7 @@ function Contactform() {
         <input 
           type="text" 
           name="email" 
-          value={inputs.email || ""} 
+          value={inputs.email } 
           onChange={handleChange}
         />
         </label>
@@ -46,7 +68,7 @@ function Contactform() {
         <input 
           type="text" 
           name="message" 
-          value={inputs.message || ""} 
+          value={inputs.message } 
           onChange={handleChange}
         />
         </label>
