@@ -13,13 +13,13 @@ connection.connect(function(err){
         return;
     }
     console.log('Connected to database' + connection.threadId)
-    let sql = "INSERT INTO contact (firstname, lastname, email, message) VALUES ('test', 'testesen', 'testesen@test.no', 'hei')"
+    let sql = "INSERT INTO contact (firstname, lastname, email, message) VALUES ('test2', 'testesen', 'testesen@test.no', 'hei')";
     connection.query(sql, function(err, result){
         if (err) throw err;
         console.log('1 inserted!')
     })
 });
 
-export default connection;
+// export default connection;
 
 // connection.query('INSERT INTO contact')
