@@ -1,80 +1,50 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import '../forms/Contactform.css';
-//import '../../backend/connectionDatabase';
-//import connection from '../../backend/connectionDatabase';
-const axios = require('axios').default;
 
-function Contactform() {
-  const [inputs, setInputs] = useState({});
-
-  const handleChange = (event) => {
-    const name = event.target.name;
-    const value = event.target.value;
-    setInputs(values => ({...values, [name]: value}))
-  }
-
-  //gather input and send to DB
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    alert(JSON.stringify(inputs));
-    alert('Thank you for your inquiry')
-
-    const data = {
-      firstName: inputs.firstName,
-      lastname: inputs.lastName,
-      email: inputs.email,
-      message: inputs.message
-    }
-
-    axios.post ('../../backend/connectionDatabase', data)
-      .then((res) => {
-        console.log(res.data)
-      }).catch ((error) => {
-        console.log(error)
-      })
-
-  }
-  
-
+const ContactForm = () => {
+  const [status, setStatus] = useState("Send melding");
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("Sender melding...");
+    const { name, email, message } = e.target.elements;
+/* Creating an object with the values from the form. */
+    let details = {
+      name: name.value,
+      email: email.value,
+      message: message.value,
+    };
+/* Sending the data to the server. */
+    let response = await fetch("http://localhost:5000/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json;charset=utf-8",
+      },
+      body: JSON.stringify(details),
+    });
+/* Setting the status to "Send melding" and then it is alerting the result.status. */
+    setStatus("Send melding");
+    let result = await response.json();
+    alert(result.status);
+  };
+/* Returning the form. */
   return (
-    //handle submit form by adding method
-    <form onSubmit={handleSubmit}> 
-      <label>Enter your first name:
-      <input 
-        type="text" 
-        name="firstName" 
-        value={inputs.firstName } 
-        onChange={handleChange}  //input to handle change
-      />
-      </label>
-      <label>Enter your last name:
-      <input 
-        type="text" 
-        name="lastName" 
-        value={inputs.lastName } 
-        onChange={handleChange}
-      />
-      </label>
-      <label>Enter your E-mail address:
-        <input 
-          type="text" 
-          name="email" 
-          value={inputs.email } 
-          onChange={handleChange}
-        />
-        </label>
-        <label>Enter your message:
-        <input 
-          type="text" 
-          name="message" 
-          value={inputs.message } 
-          onChange={handleChange}
-        />
-        </label>
-        <input type="submit" />
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label htmlFor="name" required>Navn:</label>
+        <input type="text" id="name" required />
+      </div>
+      <div>
+        <label htmlFor="email" required>Epost:</label>
+        <input type="email" id="email" required />
+      </div>
+      <div>
+        <label htmlFor="message" required>Melding:</label>
+        <textarea id="message" required />
+      </div>
+      <button type="submit">{status}</button>
     </form>
-  )
-}
+  );
+};
 
-export default Contactform;
+export default ContactForm;

@@ -10,7 +10,7 @@ const About = () => {
                 height: '100vh'
             }}
         >
-            <h1>We sell bikes that takes you further.</h1>
+            <h1>Vi tilbyr sykler som tar deg videre.</h1>
         </div>
     );
 };

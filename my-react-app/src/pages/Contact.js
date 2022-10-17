@@ -1,19 +1,20 @@
 import React from 'react';
 import Contactform from '../components/forms/Contactform';
+import '../pages/contact.css'
 
 
 const Contact = () => {
     return(
     <>
-        <div
+        <div class='contact-container'
             style={{
-                display: 'flex',
-                justifyContent: 'left',
-                alignItems: 'flex-start',
-                height: '100vh'
+                // display: 'flex',
+                // justifyContent: 'left',
+                // alignItems: 'flex-start',
+                // height: '100vh'
             }}
             >
-            <h1>Feel free to send us a message</h1>
+            <h1>Kontakt oss gjerne</h1>
             <Contactform/>
             
         </div>

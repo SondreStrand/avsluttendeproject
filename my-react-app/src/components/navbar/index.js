@@ -16,19 +16,19 @@ const Navbar = () => {
 
         <NavMenu>
         <NavLink to='/Home' activestyle>
-            Home
+            Hjem
           </NavLink>
           <NavLink to='/Store' activestyle>
-            Store
+            Butikk
           </NavLink>
           <NavLink to='/About' activestyle>
-            About
+            Om Oss
           </NavLink>
           <NavLink to='/Contact' activestyle>
-            Contact us
+            Kontakt oss
           </NavLink>
           <NavBtn>
-            <NavBtnLink to='/Shopingcart'>Shoping Cart</NavBtnLink>
+            <NavBtnLink to='/Shopingcart'>Handlekurv</NavBtnLink>
           </NavBtn>
         </NavMenu>
       </Nav>

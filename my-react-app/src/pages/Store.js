@@ -13,7 +13,7 @@ const Store = () => {
                 height: '100vh'
             }}
         >
-            <h1>Please see what we offer</h1>
+            <h1>Se vårt utvalg her</h1>
             <button className='btns' onClick={() => navigate("/Home")}>Tilbake</button>
         </div>
     );
