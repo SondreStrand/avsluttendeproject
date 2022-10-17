@@ -34,7 +34,7 @@
     cursor: pointer;
     font-size: 14px;
     width: auto;
-    
+    position: relative;
 }
 .hero-text {
     background-color: rgb(0,0,0); /* Fallback color */

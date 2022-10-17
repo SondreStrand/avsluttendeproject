@@ -1,6 +1,9 @@
 import React from 'react';
+import {useNavigate} from "react-router-dom"
+import '../pages/Store.css'
 
 const Store = () => {
+    const navigate = useNavigate();
     return(
         <div
             style={{
@@ -11,6 +14,7 @@ const Store = () => {
             }}
         >
             <h1>Please see what we offer</h1>
+            <button className='btns' onClick={() => navigate("/Home")}>Tilbake</button>
         </div>
     );
 };
