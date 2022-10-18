@@ -12,6 +12,7 @@
     display: flex;
     align-items: center;
     object-fit: contain;
+    position: relative;
 }
 
 .container > h1 {
@@ -21,10 +22,23 @@
     
 }
 
-.container > p {
+.herovideo > h1 {
+    font-size: 50px;
+    margin-bottom: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.herovideo > p {
     margin-top: 1px;
     color:  rgb(7, 6, 7);
     font-size: 32px;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .container .btns {
@@ -37,3 +51,4 @@
     width: auto;
     position: relative;
 }
+

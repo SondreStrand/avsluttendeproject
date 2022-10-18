@@ -2,8 +2,7 @@ import React from 'react';
 import Hero from '../components/HeroSection/Hero'
 import '../pages/Home.css'
 import { useNavigate } from 'react-router-dom';
-import CardsComponent from '../components/cards/CardsComponent';
-
+import Cards from '../components/cards/Cards';
 
 
 const Home = () => {
@@ -11,6 +10,7 @@ const Home = () => {
     return(
      <>
         <div
+     /* A style object. */
         style={{
             display: 'flex',
             justifyContent: 'center',
@@ -18,6 +18,7 @@ const Home = () => {
             height: '100vh'
             }}
         >
+            {/* A div with a class of container. It contains a Hero component and a button.  */}
             <div class='container'>
                 <Hero />
                 <button type="button" className='btns' onClick={() => navigate("/Store")}>
@@ -26,7 +27,7 @@ const Home = () => {
             </div>
             
         </div>
-        <CardsComponent />
+        <Cards />
      </>
     );
 };
