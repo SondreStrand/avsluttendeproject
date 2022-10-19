@@ -13,13 +13,13 @@ function Cards() {
            {/* Creating a list of items.  */}
           <ul className='cards__items'>
             <CardItem
-              src='images/img-9.jpg'
+              src='images/bicycle4.jpg'
               text='Se våre nyheter her'
               label='Butikk'
               path='/Store'
             />
             <CardItem
-              src='images/img-2.jpg'
+              src='images/nature1.jpg'
               text='Les om oss her'
               label='Om oss'
               path='/About'
@@ -27,19 +27,19 @@ function Cards() {
           </ul>
           <ul className='cards__items'>
             <CardItem
-              src='images/img-3.jpg'
+              src='images/contact1.jpg'
               text='Send oss gjerne en melding'
               label='Kontakt oss'
               path='/Contact'
             />
             <CardItem
-              src='images/img-4.jpg'
+              src='images/bicycle2.jpg'
               text='Se handlekurv'
               label='Handlekurv'
               path='/Shopingcart'
             />
             <CardItem
-              src='images/img-8.jpg'
+              src='images/bicycle7.jpg'
               text='Gå til toppen'
               label='Hjem'
               path='/Home'

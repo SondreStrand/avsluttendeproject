@@ -11,19 +11,20 @@ const Home = () => {
      <>
         <div
      /* A style object. */
-        style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'flex-start',
-            height: '100vh'
-            }}
+        // style={{
+        //     display: 'flex',
+        //     justifyContent: 'center',
+        //     alignItems: 'flex-start',
+        //     height: '100vh'
+        //     }}
         >
             {/* A div with a class of container. It contains a Hero component and a button.  */}
             <div class='container'>
                 <Hero />
-                <button type="button" className='btns' onClick={() => navigate("/Store")}>
+                <button className='btns1' onClick={() => navigate("/Store")}>
                     SE VÅRT UTVALG HER
-                </button>     
+                </button> 
+                
             </div>
             
         </div>
