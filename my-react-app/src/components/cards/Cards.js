@@ -42,7 +42,7 @@ function Cards() {
               src='images/bicycle7.jpg'
               text='Gå til toppen'
               label='Hjem'
-              path='/Home'
+              path={window.scrollTo({top: 0, behavior: 'smooth'}) }
             />
           </ul>
         </div>

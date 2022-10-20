@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 
 
+/* A function that is taking in props as a parameter. */
 function CardsItem(props) {
   return (
     <>

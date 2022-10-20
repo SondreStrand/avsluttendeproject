@@ -5,7 +5,7 @@ const nodemailer = require("nodemailer");
 
 /* This is the server. */
 const app = express();
-app.use(cors());
+app.use(cors()); //using cors in order to connect services
 app.use(express.json());
 app.use("/", router);
 app.listen(5000, () => console.log("Server Running"));
