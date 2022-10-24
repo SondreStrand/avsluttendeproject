@@ -1,7 +1,7 @@
 import React from 'react';
 import {useNavigate} from "react-router-dom"
 import '../pages/Store.css'
-import productsData from '../backend/getProductsData';
+
 
 const Store = () => {
     const navigate = useNavigate();
