@@ -1,12 +1,20 @@
 import React from 'react'
 
-function PrimaryButton(props){
-  const myClass = `button ${props.type}`
-  return(
-  <button className={myClass} onClick={props.handleClick}>{props.children}</button>
-  )
-  }
-
+function PrimaryButton({
+  width=10,
+  height=5,
+  backgroundColor,
+  color,
+  border,
+  borderColor,
+  fontSize,
+  buttonText,}) {
+	return (
+    	<button style={{width, height, backgroundColor, color, border, borderColor, fontSize}}>
+           {buttonText}
+        </button>
+    )
+}
   export default PrimaryButton
 
 

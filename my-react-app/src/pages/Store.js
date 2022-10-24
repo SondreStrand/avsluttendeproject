@@ -1,6 +1,7 @@
 import React from 'react';
 import {useNavigate} from "react-router-dom"
 import '../pages/Store.css'
+import productsData from '../backend/getProductsData';
 
 const Store = () => {
     const navigate = useNavigate();
@@ -14,7 +15,10 @@ const Store = () => {
             }}
         >
             <h1>Se vårt utvalg her</h1>
-            <button className='btns' onClick={() => navigate("/Home")}>Tilbake</button>
+            <button className='btns' onClick={() => navigate("/Home")}>
+                Tilbake
+            </button>
+            
         </div>
     );
 };
