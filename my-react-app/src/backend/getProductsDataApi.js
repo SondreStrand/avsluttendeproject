@@ -1,7 +1,7 @@
 import productsData from './getProductsData'
 const express = require("express");
 const router = express.Router();
-const cors = require("cors");
+
 
 
 const app = express();
