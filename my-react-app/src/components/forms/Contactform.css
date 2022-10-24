@@ -6,7 +6,7 @@
      font-weight: 500;
 }
  input[type=text],input[type=email], select, textarea {
-    max-width: 100%;
+     max-width: 100%;
      width: 100%;
      padding: 12px;
      border: 1px solid #ccc;
