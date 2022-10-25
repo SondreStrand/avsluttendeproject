@@ -1,5 +1,5 @@
 let mysql = require('mysql')
-import axios from 'axios'
+
 
 let connection = mysql.createConnection({
     host: 'localhost',
@@ -25,10 +25,3 @@ export default connection.connect(function(err){
     });
     connection.end();
 });
-
-axios.post('/Store', {
-    model: model,
-    price: price,
-    description: description,
-    image: image,
-})

@@ -20,6 +20,7 @@ const Store = () => {
             </button>
             
         </div>
+        
     );
 };
 
