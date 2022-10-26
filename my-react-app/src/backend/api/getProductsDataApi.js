@@ -1,4 +1,4 @@
-import productsData from './getProductsData'
+import productsData from '../getProductsData'
 const express = require("express");
 const router = express.Router();
 

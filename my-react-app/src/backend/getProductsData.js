@@ -1,12 +1,16 @@
 let mysql = require('mysql')
-let connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'contactformdatabase'
-});
 
-let productsData = connection.connect(function(err){
+
+let sqlQueryfunc = () => {
+    let connection = mysql.createConnection({
+     host: 'localhost',
+     user: 'root',
+     password: '',
+     database: 'contactformdatabase'
+    });
+
+
+    connection.connect(function(err){
     if (err) {
         console.error('Error connecting to database' + err.message)
         return;
@@ -17,11 +21,16 @@ let productsData = connection.connect(function(err){
     
     connection.query(sql, function(err, result){
         if (err) throw err;
-        console.log(result)
+        //console.log(result)
         let values = [result];
-        //console.log(values)
+        console.log(values)
+        return values
+        });
+     connection.end();
     });
-    connection.end();
-});
 
-export default productsData;
+}
+
+sqlQueryfunc()
+
+
