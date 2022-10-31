@@ -22,7 +22,7 @@ const Home = () => {
             <div class='container'>
                 <Hero />
                 <button className='btns1' onClick={() => navigate("/Store")}>
-                    SE VÅRT UTVALG HER
+                    SE VÅRT UTVALG HER!
                 </button> 
                 
             </div>
